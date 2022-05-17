@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+<div id="comentarios">
+  <% if @post.comentarios.present? %> <%# This will only show our div COMENTARIO if there are any comentarios if not then COMENTARIO HEADER will not show up%>
+  <h1>Comentarios</h1>
+  <% end %>
+  <%= render @post.comentarios %>
+  <h2>Add a Comentario</h2>
+  <%= render partial: "comentarios/form", locals: {comentario: @post.comentarios.new} %>
+
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %> 
+
+

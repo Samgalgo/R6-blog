@@ -1,0 +1,10 @@
+<div>
+  <strong><%= comentario.name %> says:</strong>
+  <%= comentario.content %>
+  <div class="comentario-admin"> 
+    <%= link_to "Edit", edit_post_comentario_path(@post, comentario) %>
+    <%= link_to "Delete", [@post, comentario], method: :delete %>
+  </div>
+
+
+</div>
